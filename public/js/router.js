@@ -50,8 +50,6 @@ define([
             });
         },
 
-
-
         fetchUser: function (id) {
             var self = this;
 

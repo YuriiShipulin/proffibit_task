@@ -19,22 +19,21 @@ module.exports = function () {
 
         User
             .findById(id, function (err, user) {
-            if (err) {
-                err.status = 400;
-                err.message = 'Bad params: ' + id;
+                if (err) {
+                    err.status = 400;
+                    err.message = 'Bad params: ' + id;
 
 
-                return next(err);
-            }
+                    return next(err);
+                }
 
-            if (user) {
-                res.status(200).send(user);
-            } else {
-                res.status(403).send('No such user: ' + req.params.id);
-            }
-        });
+                if (user) {
+                    res.status(200).send(user);
+                } else {
+                    res.status(403).send('No such user: ' + req.params.id);
+                }
+            });
     };
-
 
     this.create = function (req, res, next) {
         var body = req.body;

@@ -6,8 +6,9 @@ var html = require('html');
 var routes = require('./routes/index');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var process = require('./config/development');
 
-mongoose.connect("localhost", "proffibit", 27017);
+mongoose.connect(process.env.DB_HOST, process.env.DB_NAME, process.env.DB_PORT);
 
 var app = express();
 
