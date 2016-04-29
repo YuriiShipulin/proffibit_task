@@ -1,0 +1,10 @@
+<div id="userCreate" class="container" align="center" style="width: 300px">
+    <form class="form-signin" action="/user/" method="put">
+        <h2 class="form-signin-heading">Edit user</h2>
+        <input id="firstName" type="text" class="form-control" value="<%= model.get('firstName')%>" required>
+        <input id="lastName" type="text" class="form-control" value="<%= model.get('lastName')%>">
+        <button type="button" id="saveBtn" class="btn btn-primary btn-block">Save</button>
+        <button type="button" id="cancelBtn" class="btn btn-default btn-block">Cancel</button>
+    </form>
+</div>
+

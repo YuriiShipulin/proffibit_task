@@ -1,0 +1,32 @@
+<div class="col-sm-10">
+    <h2>Users</h2>
+    <table class="table">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th></th>
+            <th>
+                <div>
+                    <button type="button" class="btn btn-success" id="createBtn">Create</button>
+                </div>
+            </th>
+            <th colspan="2"></th>
+        </tr>
+
+        <tbody id="table">
+        <%collection.forEach(function(model){%>
+        <tr id="<%=model.id%>">
+            <td><span class="label label-default"><%= model.get('firstName')%></span></td>
+            <td><span class="label label-default"><%= model.get('lastName')%></span></td>
+            <td>
+                <button type="button" class="btn btn-primary" id="editBtn">Edit</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" id="removeBtn">Remove</button>
+            </td>
+        </tr>
+        <%})%>
+        </tbody>
+    </table>
+
+</div>
